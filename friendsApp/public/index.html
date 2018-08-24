@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Buddies Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .jumbotron {
+            padding: 0.5em 0.6em;
+        }
+
+        h1,
+        h2,
+        h4,
+        h6 {
+            font-size: 2em;
+
+        }
+
+        .option {
+            padding: 5px 30px 5px 12px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            cursor: pointer
+        }
+
+        .dropdown-link:hover {
+            background-color: #f1faff;
+        }
+
+        ul.dropdown-menu li.current {
+            background-color: #eee;
+        }
+
+        ul.menu.dropdown-menu {
+            position: absolute;
+            margin-top: -1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">
+                <span class="fal fa-meh"></span> Buddy Match</h1>
+            <span class="fal fa-meh"></span>
+            <hr>
+            <h2 class="text-center">Match up With a Buddy for Whatever Reason!</h2>
+            <br>
+            <h4 class="text-center">Remember to stick next to your Buddy in case you get lost or entangled!</h4>
+            <br>
+            <h6 class="text-center">If you get confused, tell your buddy!</h6>
+            <hr>
+            <div class="text-center">
+                <a href="/friendsPage">
+                    <button class="btn btn-lg btn-primary">
+                        <span class="fa fa-list-alt"></span> View Buddies</button>
+                </a>
+            </div>
+        </div>
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of disquitetude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your perc level of ingratitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of exactitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of inaptitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would you rate your overall level of lassitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of plenitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of dissimilitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of incertitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of turpitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="dropdown  row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of pulchritude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="dropdown row justify-content-between">
+            <div class="col-sm-6">How would rate your overall level of verisimilitude?</div>
+            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
+                <optgroup label="1-Lowest, 5-Highest">
+                    <option data-selected="1" data-capacity="100000" value="1">
+                        1
+                    </option>
+                    <option data-selected="2" data-capacity="200000" value="2">
+                        2
+                    </option>
+                    <option data-selected="3" data-capacity="300000" value="3">
+                        3
+                    </option>
+                    <option data-selected="4" data-capacity="400000" value="4">
+                        4
+                    </option>
+                    <option data-selected="5" data-capacity="500000" value="5">
+                        5
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+        <footer class="footer">
+            <div class="text-center">
+                <button class="btn btn-lg btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
+                    <span class="fa fa-list-alt" id="submit"></span> SUBMIT </button>
+                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Buddy Link</a> |
+                    <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+
+</body>
+
+</html>
+<script type="text/javascript">
+
+    window.document.onload = function () {
+        $("select").each(function () { this.selectedIndex = 0 });
+        $(".btn btn-lg btn-primary float-right").on("click", function () {
+
+            var userInput1 = $(".dropdown-header col-sm-1").val();
+            var userInput2 = [];
+            userInput2.push(userInput1);
+            console.log(userInput);
+            // not sure if this will be used
+            // function multiplyArray(num) {
+            //     return num * userInput2;
+            // }
+            var friends = [];
+            $.get('/data/friends', function (data) {
+
+                friends.push(data);
+            })
+
+            $.post("/data/friends", userInput2, function (data, status) {
+
+                var matchName = '';
+                var matchPic = '';
+                var totalDiff = 10;
+
+                for (var i = 0; i < friends.length; i++) {
+                    console.log('friend = ' + JSON.stringify(friends[i]));
+
+
+                    var diffy = 0;
+                    for (var j = 0; j < userInput2.length; j++) {
+                        diffy += Math.abs(friends[i].scores[j] - userInput2[j]);
+                    }
+                    console.log(diffy);
+                    if (diffy < totalDiff) {
+
+                        // totalDiff = diffy,
+                        matchName = friends[i].name,
+                            matchPic = friends[i].photo
+
+                    }
+                }
+
+                friends.push(userInput2);
+                res.json({ status: 200, matchName: matchName, matchPic: matchPic });;
+
+                console.log("object being sent: ", { matchName: matchName, matchPic: matchPic });
+                console.log("friends: ", friends);
+                console.log("userInput: ", userInput2);
+
+
+            }).done(function (data) {
+                console.log(data);
+            })
+
+            // console.log(compare);
+            // for (var i = 0; i < userInput2; i++) {
+            //     for (var y = 0; y < compare; y++) {
+            //         // var w =Math.min(userInput[i], compare2[y]);
+            //         // var z = userInput2[i] - compare2.length[y];
+            //         var x = math.min.apply(null, userInput2[i].map(Math.abs), compare[y].map(Math.abs));
+            //         empty.push(map(x));
+            //         console.log(empty);
+            //     }
+
+            // } console.log(x);
+            // console.log(empty);
+            // if (empty.reduce((a, b) => a + b, 0) === userInput2)
+            //     $.post("/friendsPage", userInput2)
+
+
+        })
+    // function reset() { $("select").each(function () { this.selectedIndex = 0 }) }
+
+
+//  Using a RegEx Pattern to remove spaces from searchedCharacter You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+// userInput = userInput.replace(/\s+/g, "").toLowerCase(); QUESTION: What does $.get do? What are the parameters it is expecting?
+// Must have a .get to draw from the phony friends data to manipulate it here! BodyParser makes sure all of the data is uniform
+// from req and res unless you are trying to manipulate a new array, then it will have to be converted into an object. Handlbars
+// only manipulates objects.All of your code, pretty much needs to be in the .get and .post on-click submit .post uses req.body
+// or req.params. You can insert user submitted info into req.body and 'get' it on the server page data the client sends to
+// the server is .post remember post uses req.body and re.params console.log(data); var newArray = []; if (data) {for (var i
+// = 0; i < userInput.length; i++){for (var y=0 ; y < data.scores; y++){ var z=M ath.min(userInput[i], data.scores[y]; } $(
+//     "#stats").show(); $( "#name").text(data.name); $( "#role").text(data.role); $( "#age").text(data.age); $( "#force-points").text(data.forcePoints);
+//     some examples of functions that get and function renderFriendsPage(req, res) { fs.readFile(__dirname + "/index.html", function(err,
+//     data) { if (err) { res.writeHead(500, { "Content-Type": "text/html" }); res.end( "
+// We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+//  an html file. res.writeHead(200, { "Content-Type ": "text/html
+//     " }); res.end(data); } }); }
+// POST EXAMPLE - function renderThankYouPage(req, res) {Saving the request posted data as a variable. var requestData = " "; var myHTML = " ";  When the server receives data, it will add it to requestData. req.on( "data ", function(data) { requestData
+//             +=d ata; console.log( "You just posted some data to the server:\n ", requestData); myHTML=" When the request
+//     has ended... req.on( " end ", function() { res.writeHead(200, { "Content-Type ": "text/html
+//             " }); res.end(myHTML);
+
+
+
+
+
+</script>
