@@ -4,66 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <title>Buddies Page</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
+    <base href="/">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .jumbotron {
-            padding: 0.5em 0.6em;
-        }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        h1,
-        h2,
-        h4,
-        h6 {
-            font-size: 2em;
+    <!-- <script src="../script/script.js"></script> -->
+    <script src="https://code.jquery.com/jquery.js"></script>
 
-        }
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-        .option {
-            padding: 5px 30px 5px 12px;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            cursor: pointer
-        }
+</head>
 
-        .dropdown-link:hover {
-            background-color: #f1faff;
-        }
+<style>
+    body {
+        width: 100%;
+        height: 100%
+    }
 
-        ul.dropdown-menu li.current {
-            background-color: #eee;
-        }
+    .jumbotron {
+        padding: 0.4em 0.5em;
+    }
 
-        ul.menu.dropdown-menu {
-            position: absolute;
-            margin-top: -1px;
-        }
-    </style>
+    h1,
+    h2,
+    h4,
+    h6 {
+        font-size: 2em;
+
+    }
+
+    .option {
+        padding: 5px 30px 5px 12px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        cursor: pointer
+    }
+
+    .dropdown-link:hover {
+        background-color: #f1faff;
+    }
+
+    select>optgroup {
+        position: absolute;
+        margin-top: -1px;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s;
+        text-align: left !important;
+        left: auto !important;
+    }
+
+    /* optgroup {
+        left: auto !important
+    } */
+
+    #body2 :first-child {
+        width: 18%v !important;
+        height: 18% !important
+    }
+
+    #modal {
+        max-width: 90% !important;
+    }
+
+    img {
+        width: 60%;
+        height: 60%
+    }
+
+    /* <!-- 
+    ul.lastChild {
+        right: 4px;
+        left: auto;
+    }
+
+    option {
+        direction: ltr;
+    } --> */
+</style>
 </head>
 
 <body>
 
     <div class="container">
         <div class="jumbotron">
-            <h1 class="text-center">
-                <span class="fal fa-meh"></span> Buddy Match</h1>
-            <span class="fal fa-meh"></span>
-            <hr>
-            <h2 class="text-center">Match up With a Buddy for Whatever Reason!</h2>
+            <h2 class="text-center">Hey, Match up With a Buddy for Whatever Reason!</h2>
             <br>
             <h4 class="text-center">Remember to stick next to your Buddy in case you get lost or entangled!</h4>
             <br>
             <h6 class="text-center">If you get confused, tell your buddy!</h6>
-            <hr>
-            <div class="text-center">
-                <a href="/friendsPage">
-                    <button class="btn btn-lg btn-primary">
-                        <span class="fa fa-list-alt"></span> View Buddies</button>
-                </a>
-            </div>
         </div>
         <div class="dropdown row justify-content-between">
             <div class="col-sm-6">How would rate your overall level of disquitetude?</div>
@@ -273,30 +304,8 @@
             </select>
         </div>
 
-        <div class="dropdown  row justify-content-between">
-            <div class="col-sm-6">How would rate your overall level of pulchritude?</div>
-            <select class="dropdown-header col-sm-1" data-toggle="dropdown">
-                <optgroup label="1-Lowest, 5-Highest">
-                    <option data-selected="1" data-capacity="100000" value="1">
-                        1
-                    </option>
-                    <option data-selected="2" data-capacity="200000" value="2">
-                        2
-                    </option>
-                    <option data-selected="3" data-capacity="300000" value="3">
-                        3
-                    </option>
-                    <option data-selected="4" data-capacity="400000" value="4">
-                        4
-                    </option>
-                    <option data-selected="5" data-capacity="500000" value="5">
-                        5
-                    </option>
-                </optgroup>
-            </select>
-        </div>
         <div class="dropdown row justify-content-between">
-            <div class="col-sm-6">How would rate your overall level of verisimilitude?</div>
+            <div class="col-sm-6">How would rate your overall level of pulchritude?</div>
             <select class="dropdown-header col-sm-1" data-toggle="dropdown">
                 <optgroup label="1-Lowest, 5-Highest">
                     <option data-selected="1" data-capacity="100000" value="1">
@@ -319,23 +328,33 @@
         </div>
         <footer class="footer">
             <div class="text-center">
-                <button class="btn btn-lg btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-                    <span class="fa fa-list-alt" id="submit"></span> SUBMIT </button>
-                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                <button class="btn btn-lg btn-primary float-right" data-toggle="modal" data-target="#exampleModal0" id="submit">
+                    <span class="fa fa-list-alt"></span> SUBMIT </button>
+
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
+
+                            <!-- Modal Header -->
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <h4 class="modal-title text-center">Your Matched Buddies!!!</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                            <div class="modal-body">
-                                ...
+
+                            <!-- Modal body -->
+                            <div class="modal-body" id="body1">
+                                Modal body..
                             </div>
+                            <hr>
+                            <div class="modal-body" id="body2">
+                                Modal body..
+                            </div>
+
+
+                            <!-- Modal footer -->
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-primary" id="save">Save to Local Storage!</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="clear">Clear Survey</button>
                             </div>
                         </div>
                     </div>
@@ -344,7 +363,7 @@
             <div class="container">
                 <p>
                     <a href="/api/friends">API Buddy Link</a> |
-                    <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a>
+                    <a href="https://github.com/GeneralAnesthetic/HomeWork11/tree/master/friendsApp">GitHub Repo</a>
                 </p>
             </div>
         </footer>
@@ -354,104 +373,177 @@
 
 </body>
 
-</html>
+
 <script type="text/javascript">
 
-    window.document.onload = function () {
-        $("select").each(function () { this.selectedIndex = 0 });
-        $(".btn btn-lg btn-primary float-right").on("click", function () {
+    $(document).ready(function () {
 
-            var userInput1 = $(".dropdown-header col-sm-1").val();
-            var userInput2 = [];
-            userInput2.push(userInput1);
-            console.log(userInput);
-            // not sure if this will be used
-            // function multiplyArray(num) {
-            //     return num * userInput2;
-            // }
-            var friends = [];
-            $.get('/data/friends', function (data) {
+        // $("#json").on("click", function (e) {
+        //     e.preventDefault();
+        //     console.log(e);
+        //     $('modal :not(:last)').remove().html(data);
+        // $('#myModal').show(); $('.modal-header').hide(); $('#body2').hide(); $('#save').hide(); $('#myModal').html(data); $('#clear').show();
 
-                friends.push(data);
-            })
+    });
+    // $("button :not(.btn btn-lg btn-primary)")
+    // var submitButton = $("button).first().next();
+    $("#submit").on("click", function (e) {
+        e.preventDefault();
+        $('#myModal').modal('toggle');
+        // $('#myModal').modal('show');
+        //             $("[data-toggle='modal']").modal();
+        // $("#exampleModalLong").attr("aria-hidden='false'");
 
-            $.post("/data/friends", userInput2, function (data, status) {
+
+        // console.log(e);
+        // var newArray = [];
+        var newArr = [];
+        $(".dropdown option:selected").html(function (i, html) {
+            newArr.push(html);
+        });
+        // var reqInfo = req.body;
+        var arr = newArr.map(function (x) {
+            return parseInt(x, 10);
+        });
+        // var result = reqInfo.map(function(x) {
+        //   return parseInt(x, 10);
+        // });
+        // var arr = $(".dropdown option:selected").map(function () {
+        //     return this.innerHTML;
+        // }).get();
+        // newArray.push(arr);
+        console.log("HTML Elements Pushed to a New Array without White-Spaces: ", arr);
+
+        // $.ajax({
+        //     url: currentURL + "/api/friends",
+        //     type: 'POST',
+        //     contentType: 'application/json',
+        //     data: JSON.stringify(arr),
+        //     error: function (err) {
+        //         if (err) { console.log("Server Rejected Data") }
+        //     }
+        // });
+
+
+        // // var friendsData = [];
+        // $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+        //     .then(function (data) {
+
+        // friendsData.push(data);
+        // console.log("This is comming back from the server as an entire webpage...Friends ObjectData: ", data);
+        // console.log("Friends ObjectData: ", friendsData);
+
+
+        var currentURL = window.location.origin;
+        console.log("Current URL Loaction: ", currentURL);
+        $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+            .then(function (data) {
+
 
                 var matchName = '';
                 var matchPic = '';
                 var totalDiff = 10;
 
-                for (var i = 0; i < friends.length; i++) {
-                    console.log('friend = ' + JSON.stringify(friends[i]));
 
+                for (var i = 0; i < data.length; i++) {
+                    console.log('friend = ' + JSON.stringify(data[i]));
+                    var filtered = data[i].scores.filter(
+                        function (e) {
+                            return this.indexOf(e) < 0;
+                        },
+                        [2, 4]
+                    );
+                    console.log("filtered", filtered);
 
                     var diffy = 0;
-                    for (var j = 0; j < userInput2.length; j++) {
-                        diffy += Math.abs(friends[i].scores[j] - userInput2[j]);
-                    }
-                    console.log(diffy);
-                    if (diffy < totalDiff) {
+                    for (var j = 0; j < arr.length; j++) {
 
-                        // totalDiff = diffy,
-                        matchName = friends[i].name,
-                            matchPic = friends[i].photo
+                        diffy += Math.abs(data[i].scores[j] - arr[j]);
 
+                        console.log("var diffy: ", diffy);
+                        if (diffy < totalDiff) {
+
+
+
+                            matchName = data[j].name,
+                                matchPic = $("<img src =" + "'" + data[j].photo + "'" + "styles = width:60%; height:60%'</img>");
+                            $("#body1").html(matchName);
+                            $("#body2").html(matchPic);
+                            console.log("object being sent: ", { matchName: matchName, matchPic: matchPic });
+
+
+                            // friendsData.push(arr);
+                            // res.send({ status: 200, matchName: matchName, matchPic: matchPic });;
+
+
+                            $("#save").on("click", function () {
+                                if (typeof (storage) !== null || typeof (storage) !== undefined) {
+                                    localStorage.setItem(matchName);
+                                    localStorage.setItem(matchPic);
+                                }
+                                else if (typeof (storage) !== null || typeof (storage) !== undefined) {
+                                    $("#body1").html(localStorage.getItem(matchName));
+                                    $("#body2").html(localStorage.getItem(matchPic));
+                                }
+                                else {
+                                    alert("Your Match-Data Did Not Save! Please Complete the Survey Again Buddy!");
+                                    $(".modal").hide();
+                                    location.reload();
+                                }
+                            })
+
+
+                        }
                     }
                 }
-
-                friends.push(userInput2);
-                res.json({ status: 200, matchName: matchName, matchPic: matchPic });;
-
-                console.log("object being sent: ", { matchName: matchName, matchPic: matchPic });
-                console.log("friends: ", friends);
-                console.log("userInput: ", userInput2);
-
-
-            }).done(function (data) {
-                console.log(data);
             })
 
-            // console.log(compare);
-            // for (var i = 0; i < userInput2; i++) {
-            //     for (var y = 0; y < compare; y++) {
-            //         // var w =Math.min(userInput[i], compare2[y]);
-            //         // var z = userInput2[i] - compare2.length[y];
-            //         var x = math.min.apply(null, userInput2[i].map(Math.abs), compare[y].map(Math.abs));
-            //         empty.push(map(x));
-            //         console.log(empty);
+        $("#clear").on("click", function () {
+            alert("Clearing Survey for Restart...");
+            $("#body1").val("");
+            $("#body2").val("");
+            var currentURL = window.location.origin;
+            $.ajax({ url: currentURL + "/clear", method: "POST" });
+            location.reload();
+        }
+            // Refresh the page after data is cleared
+
+
+
+            // var selectedItem = $(".dropdown option:selected").each(function (i, v) {
+            //     // while (i < 11) { arr.push(i); }
+            //     // arr.push[i];
+            //     console.log(arr.push(i[v]));
+
+            // })
+            // console.log("selectedDropDownItems", arr);
+
+            //     while (value < 11) {
+            //         console.log(value)
+
             //     }
+            // arr.join(selectedItem.length);
+            // for (i = 1; i < selectedItem.length; i++) {
+            //     arr.push(selectedItem.length[i]);
+            // }
+            // console.log("master array", arr)
 
-            // } console.log(x);
-            // console.log(empty);
-            // if (empty.reduce((a, b) => a + b, 0) === userInput2)
-            //     $.post("/friendsPage", userInput2)
+            // forEach(myFunction);
+            // function myFunction(value) {
+            //     console.log(value);
+            //     var boozeHound = $(this).attr('value');
+            //     arr.push(boozeHound);
+            //     // <!-- there's the Map function ... numbers.map(Math.abs); -->
+            // console.log("masterArray", arr); // var newArray = $(this).val().concat(arr); // console.log("newArray", newArray) //
+            // arr.push(newArray); // console.log("masterArray", arr); // arr.push(value).slice(10); // console.log(arr); $(this).val()
+            // } // }) }) }) //
+            // < !--from StackOverflow-- >
 
+            // $('select[id*="lwayer_x002d_EisDikigoros_1eef9a23-7a35-4dcf-8de9-a088b4681b2b"] option').each(function(index,value) {
 
-        })
-    // function reset() { $("select").each(function () { this.selectedIndex = 0 }) }
-
-
-//  Using a RegEx Pattern to remove spaces from searchedCharacter You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-// userInput = userInput.replace(/\s+/g, "").toLowerCase(); QUESTION: What does $.get do? What are the parameters it is expecting?
-// Must have a .get to draw from the phony friends data to manipulate it here! BodyParser makes sure all of the data is uniform
-// from req and res unless you are trying to manipulate a new array, then it will have to be converted into an object. Handlbars
-// only manipulates objects.All of your code, pretty much needs to be in the .get and .post on-click submit .post uses req.body
-// or req.params. You can insert user submitted info into req.body and 'get' it on the server page data the client sends to
-// the server is .post remember post uses req.body and re.params console.log(data); var newArray = []; if (data) {for (var i
-// = 0; i < userInput.length; i++){for (var y=0 ; y < data.scores; y++){ var z=M ath.min(userInput[i], data.scores[y]; } $(
-//     "#stats").show(); $( "#name").text(data.name); $( "#role").text(data.role); $( "#age").text(data.age); $( "#force-points").text(data.forcePoints);
-//     some examples of functions that get and function renderFriendsPage(req, res) { fs.readFile(__dirname + "/index.html", function(err,
-//     data) { if (err) { res.writeHead(500, { "Content-Type": "text/html" }); res.end( "
-// We then respond to the client with the HTML page by specifically telling the browser that we are delivering
-//  an html file. res.writeHead(200, { "Content-Type ": "text/html
-//     " }); res.end(data); } }); }
-// POST EXAMPLE - function renderThankYouPage(req, res) {Saving the request posted data as a variable. var requestData = " "; var myHTML = " ";  When the server receives data, it will add it to requestData. req.on( "data ", function(data) { requestData
-//             +=d ata; console.log( "You just posted some data to the server:\n ", requestData); myHTML=" When the request
-//     has ended... req.on( " end ", function() { res.writeHead(200, { "Content-Type ": "text/html
-//             " }); res.end(myHTML);
-
-
-
-
-
+            // console.log("index is:"+index); // index // console.log("value is"+$(this).val()); // dropdown option value // console.log("dropdown
+        )
+    })
 </script>
+
+</html>
